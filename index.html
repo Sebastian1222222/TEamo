@@ -24,6 +24,12 @@
         #botonNo {
             position: absolute;
         }
+
+        #mensaje {
+            display: none;
+            font-size: 20px;
+            margin-top: 50px;
+        }
     </style>
     <script>
         function moverBotonNo() {
@@ -35,7 +41,13 @@
         }
 
         function mostrarMensaje() {
-            alert("Awww, te amo mucho, mi Berenice");
+            // Oculta los elementos innecesarios
+            document.getElementById('titulo').style.display = 'none';
+            document.getElementById('botonSi').style.display = 'none';
+            document.getElementById('botonNo').style.display = 'none';
+
+            // Muestra el mensaje
+            document.getElementById('mensaje').style.display = 'block';
         }
     </script>
 </head>
@@ -43,6 +55,9 @@
     <div id="titulo">Te amo, ¿Me amas?</div>
     <button id="botonSi" onclick="mostrarMensaje()">Sí</button>
     <button id="botonNo" onmouseover="moverBotonNo()">No</button>
+
+    <!-- Contenedor del mensaje oculto al principio -->
+    <div id="mensaje">Awww, te amo mucho, mi Berenice</div>
 
     <script>
         window.onload = moverBotonNo;
