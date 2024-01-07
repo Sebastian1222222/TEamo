@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #titulo {
+            font-size: 24px;
+            margin: 20px;
+        }
+
+        #botonSi, #botonNo {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        #botonNo {
+            position: absolute;
+        }
+    </style>
+    <script>
+        function moverBotonNo() {
+            // Calcula una posición aleatoria para el botón "No"
+            var posX = Math.floor(Math.random() * (window.innerWidth - 200));
+            var posY = Math.floor(Math.random() * (window.innerHeight - 50));
+
+            // Aplica la nueva posición al botón "No"
+            document.getElementById('botonNo').style.left = posX + 'px';
+            document.getElementById('botonNo').style.top = posY + 'px';
+        }
+    </script>
+</head>
+<body>
+    <div id="titulo">Te amo, ¿Me amas?</div>
+    <button id="botonSi">Sí</button>
+    <button id="botonNo" onmouseover="moverBotonNo()">No</button>
+
+    <script>
+        // Agrega un evento al cargar la página para mover el botón "No" a una posición inicial
+        window.onload = moverBotonNo;
+    </script>
+</body>
+</html>
